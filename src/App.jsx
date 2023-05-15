@@ -1,35 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import { Provider } from "react-redux";
+import store from "./utils/redux/store";
+import Home from "./components/Home/Home";
+import Watchpage from "./components/watchpage/Watchpage"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Body from "./Body";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      element: <Body />,
+      children:[
+        {
+          path:'/',
+          element: <Home />,
+          children:[]
+        },
+        {
+          path:"watch",
+          element: <Watchpage />,
+          children:[]
+        }
+      ]
+    },
+  ])
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="">
+      <Provider store={store}>
+
+          <RouterProvider router={router}/>
+
+      </Provider>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
+/*
+  => Header
+    * Menu Icon
+    * Logo
+    * Search
+    * Account
+  => Top Buttons
+    * All
+    * Live
+    * Gaming
+    * Music ..etc
+  => HomePage Videos
+    => Video card List
+    => shorts
+    => Recomended Movies to Buy
+    => Again Videos list
+  => Video Player Page
+    =>Center Video
+      => Channel Detials
+    => Recomended videos
+  => Siderbar
+    * Home
+    * Shorts
+    * Subscriptions
+    * Like Videos
+    * Explore
+      * Trending
+      * Shopping
+      * Music
+      * Movies
+      * Live
+      * Gaming
+      * News
+      * Sports
+      * Learning
+      * Beauty and Fashion
+    * More From Youtube
+      * Youtbe Premium
+      * Youtube studio
+      * Youtube Music
+      * Youtube Kids
+    * Settings
+    * Help
+    * Feedback
+  
+*/
