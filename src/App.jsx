@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Watchpage from "./components/watchpage/Watchpage"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./Body";
+import Searchpage from "./components/search/Searchpage";
 function App() {
   const router = createBrowserRouter([
     {
@@ -20,6 +21,11 @@ function App() {
         {
           path:"watch",
           element: <Watchpage />,
+          children:[]
+        },
+        {
+          path:"search",
+          element: <Searchpage />,
           children:[]
         }
       ]
