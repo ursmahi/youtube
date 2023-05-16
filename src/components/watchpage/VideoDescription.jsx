@@ -3,6 +3,12 @@ import { convertNumber } from "../../utils/helperfunctions";
 
 const VideoDescription = ({ details }) => {
   const [showMore, setShowMore] = useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 470,
+      behavior: 'smooth',
+    })
+  }
   return (
     <div className="bg-gray-100 rounded-lg p-3 mt-3">
       <div className="flex mb-5">
@@ -20,6 +26,9 @@ const VideoDescription = ({ details }) => {
       className="mt-3 font-semibold"
         onClick={() => {
           setShowMore(!showMore);
+          if(showMore){
+            scrollToTop()
+          }
         }}
       >
        {
