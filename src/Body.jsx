@@ -11,7 +11,7 @@ const Body = () => {
       <div className="sticky top-0 bg-white z-50">
         <Header />
       </div>
-      <div className={`${(location.pathname=='/' || location.pathname=='/search')?'flex':''}`}>
+      <div className={`${(location.pathname=='/' || location.pathname=='/search' || location.pathname=='/trending')?'flex':''}`}>
         <div className="">
           <Sidebar />
         </div>

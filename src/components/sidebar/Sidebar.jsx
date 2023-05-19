@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 const sideBarList = [
   { Icon: "", title: "Home", link: "/" },
   { Icon: "", title: "Shorts", link: "/" },
-  { Icon: "", title: "Subscriptions", link: "/" },
   { Icon: "", title: "Trending", link: "/" },
+  { Icon: "", title: "Subscriptions", link: "/" },
   { Icon: "", title: "Shopping", link: "/" },
   { Icon: "", title: "Music", link: "/" },
   { Icon: "", title: "Movies", link: "/" },

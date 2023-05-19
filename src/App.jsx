@@ -7,6 +7,7 @@ import Watchpage from "./components/watchpage/Watchpage"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./Body";
 import Searchpage from "./components/search/Searchpage";
+import TrendingPage from "./components/trending/TrendingPage";
 function App() {
   const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ function App() {
         {
           path:"search",
           element: <Searchpage />,
+          children:[]
+        },
+        {
+          path:"trending",
+          element: <TrendingPage/>,
           children:[]
         }
       ]

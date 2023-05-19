@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
-    "youtube-sr": "^4.3.4"
+    "youtube-sr": "^4.3.4",
+    "youtubei.js": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

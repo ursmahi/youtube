@@ -36,7 +36,7 @@ const Watchpage = () => {
     }
     scrollToTop()
     fetchRecomendedVideos()
-  },[])
+  },[parms.get("v")])
   return (
     <div className="mt-7 ml-8 grid grid-cols-12  gap-4">
       <div className="col-span-8">
