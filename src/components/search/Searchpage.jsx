@@ -72,10 +72,16 @@ const Searchpage = () => {
   const setMenuDefault = () => {
     dispatch(menuSetDefault());
   };
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
   useEffect(() => {
     setMenuDefault();
     getSearchResuslts();
+    scrollToTop();
   }, [parms.get("query")]);
   return (
     <div className="">

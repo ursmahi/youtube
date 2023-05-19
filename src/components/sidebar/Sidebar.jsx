@@ -3,29 +3,31 @@ import {
   IconsHome,
   IconsVideoLibrary,
   IconsSubscription,
+  IconsTrending,
 } from "../../icon-components/sidebar-icons/SidebarIconComponents";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const sideBarList = [
-  { Icon: "", title: "Home", link: "/" },
-  { Icon: "", title: "Shorts", link: "/" },
-  { Icon: "", title: "Trending", link: "/" },
-  { Icon: "", title: "Subscriptions", link: "/" },
-  { Icon: "", title: "Shopping", link: "/" },
-  { Icon: "", title: "Music", link: "/" },
-  { Icon: "", title: "Movies", link: "/" },
-  { Icon: "", title: "Live", link: "/" },
-  { Icon: "", title: "Gaming", link: "/" },
-  { Icon: "", title: "News", link: "/" },
-  { Icon: "", title: "Sports", link: "/" },
-  { Icon: "", title: "Learning", link: "/" },
-  { Icon: "", title: "Fashion & Beauty", link: "/" },
+  { Icon: IconsHome, title: "Home", link: "/" },
+  { Icon: IconsVideoLibrary, title: "Shorts", link: "/" },
+  { Icon: IconsTrending, title: "Trending", link: "/trending" },
+  { Icon: IconsSubscription, title: "Subscriptions", link: "/" },
+  { Icon: IconsHome, title: "Shopping", link: "/" },
+  { Icon: IconsHome, title: "Music", link: "/" },
+  { Icon: IconsHome, title: "Movies", link: "/" },
+  { Icon: IconsHome, title: "Live", link: "/" },
+  { Icon: IconsHome, title: "Gaming", link: "/" },
+  { Icon: IconsHome, title: "News", link: "/" },
+  { Icon: IconsHome, title: "Sports", link: "/" },
+  { Icon: IconsHome, title: "Learning", link: "/" },
+  { Icon: IconsHome, title: "Fashion & Beauty", link: "/" },
   //   { icon: "", title: "", link: "/" },
 ];
 
 const MinSlideBarCard = () => {
   const minSidebarItems = [
     { Icon: IconsHome, title: "Home", link: "/" },
+    { Icon: IconsTrending, title: "Trending", link: "/trending" },
     { Icon: IconsVideoLibrary, title: "Shorts", link: "/" },
     { Icon: IconsVideoLibrary, title: "Library", link: "/" },
     { Icon: IconsSubscription, title: "Subscriptions", link: "/" },
@@ -49,7 +51,7 @@ const SiderItemCard = ({ Icon, title, link }) => {
     <Link to={link}>
       <button className="p-2 flex items-center">
         <span className="mr-6">
-          <IconsHome className="w-7 h-6" />
+          <Icon className="w-7 h-6" />
         </span>
         <span className="text-left text-md">{title}</span>
       </button>
